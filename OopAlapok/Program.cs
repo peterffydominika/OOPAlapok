@@ -2,7 +2,7 @@
 
 namespace OopAlapok{
     public class Szemely{
-        private string nev;
+        protected string nev;
         private int kor;
 
         public Szemely(string Nev){
@@ -33,6 +33,7 @@ namespace OopAlapok{
     }
     public class Hallgato : Szemely{
         private string neptunKod;
+
     }
     internal class Program{
         static void Main(string[] args){
