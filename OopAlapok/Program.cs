@@ -19,6 +19,7 @@ namespace OopAlapok{
             return $"A tanuló neve: {nev}, életkora: {kor}";
         }
     }
+    //5.Feladat
     class Bankszamla{
         private int egyenleg;
         public void Betesz()
