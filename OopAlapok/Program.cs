@@ -5,28 +5,27 @@ namespace OopAlapok{
         private string nev;
         private int kor;
 
-        public Szemely(string Nev, int Kor){
+        public Szemely(string Nev){
             this.nev = Nev;
-            this.kor = Kor;
         }
-
+        public int Kor{
+            get => kor;
+            set{
+                if (value <= 0)   throw new ArgumentException("Kor nem lehet negatív.");
+                else kor = value;
+            }
+        }
         public string Kiir(){
-            return $"A tanulo neve: {nev}, életkora: {kor}";
+            return $"A tanuló neve: {nev}, életkora: ";
         }
-        //public int Kor{
-        //    get => kor;
-        //    set{
-        //        if (value <= 0)
-        //            throw new ArgumentException("Kor nem lehet negatív.");
-        //        kor = value;
-        //    }
-        //}
     }
     internal class Program{
         static void Main(string[] args){
             try{
-                Szemely tanulo = new Szemely("Kiss Péter", 35);
-                Console.WriteLine(tanulo.Kiir());
+                Szemely tanulo = new Szemely("Kiss Péter");
+                Console.Write(tanulo.Kiir());
+                tanulo.Kor = 32;
+                Console.WriteLine(tanulo.Kor);
                 //Console.WriteLine(tanulo.nev);
                 //Console.WriteLine(tanulo.Kor);
             }
