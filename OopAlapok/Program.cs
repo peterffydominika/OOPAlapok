@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace OopAlapok{
     public class Szemely{
@@ -21,10 +22,14 @@ namespace OopAlapok{
         public override string ToString(){
             return $"A tanuló neve: {nev}, életkora: {kor}";
         }
+        public virtual void KiIr()
+        {
+            Console.WriteLine("Én egy hallgató vagyok.");
+        }
     }
     //5.Feladat
     class Bankszamla{
-        private int egyenleg;
+        private uint egyenleg;
         public void Betesz()
         {
 
@@ -46,7 +51,14 @@ namespace OopAlapok{
                 }
             }
         }
+        
 
+    }
+    public class Dolgozo : Szemely{
+        private int Ber;
+        public override void KiIr(){
+            Console.WriteLine("Én egy dolgozó vagyok.");
+        }
     }
     internal class Program{
         static void Main(string[] args){
@@ -70,6 +82,10 @@ namespace OopAlapok{
             {
                 Console.WriteLine(item.Nev);
             }
+            Hallgato h2 = new Hallgato();
+            h2.KiIr();
+            Dolgozo d1 = new Dolgozo();
+            d1.KiIr();
         }
     }
 }
