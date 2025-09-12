@@ -33,6 +33,16 @@ namespace OopAlapok{
     }
     public class Hallgato : Szemely{
         private string neptunKod;
+        public string NeptunKod{
+            get { return neptunKod; }
+            set
+            {
+                if (value.Length <= 6)
+                {
+                    neptunKod = value;
+                }
+            }
+        }
 
     }
     internal class Program{
