@@ -15,19 +15,16 @@ namespace OopAlapok{
                 else kor = value;
             }
         }
-        public string Kiir(){
-            return $"A tanuló neve: {nev}, életkora: ";
+        public override string ToString(){
+            return $"A tanuló neve: {nev}, életkora: {kor}";
         }
     }
     internal class Program{
         static void Main(string[] args){
             try{
                 Szemely tanulo = new Szemely("Kiss Péter");
-                Console.Write(tanulo.Kiir());
                 tanulo.Kor = 32;
-                Console.WriteLine(tanulo.Kor);
-                //Console.WriteLine(tanulo.nev);
-                //Console.WriteLine(tanulo.Kor);
+                Console.Write(tanulo);
             }
             catch (ArgumentException ex){
                 Console.WriteLine($"Hiba: {ex.Message}");
