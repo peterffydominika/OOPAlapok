@@ -31,6 +31,9 @@ namespace OopAlapok{
 
         }
     }
+    public class Hallgato : Szemely{
+        private string neptunKod;
+    }
     internal class Program{
         static void Main(string[] args){
             try{
